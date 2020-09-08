@@ -22,14 +22,19 @@ public class BinarySearch {
 	private static int searchElement(int[] arr, int firstIndex, int lastIndex, int elementToBeSearch) {
 
 		if (lastIndex >= firstIndex) {
+			// Calculating the mid of the array from first and last indexes
 			int mid = (firstIndex + lastIndex) / 2;
 
+			//element to compare with mid of the array
 			if (arr[mid] == elementToBeSearch) {
 				return mid;
 			} else {
+				// if the mid value is greater than elementToSearch 
 				if (arr[mid] > elementToBeSearch) {
+					//then mid-1 from the last position
 					return searchElement(arr, firstIndex, mid - 1, elementToBeSearch);
 				} else {
+					//then mid + 1 from the first position
 					return searchElement(arr, mid + 1, lastIndex, elementToBeSearch);
 				}
 			}
